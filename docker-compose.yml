@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+
+
+  django:
+    container_name: django_send_mail_full
+    build:
+      context: .
+    command: python manage.py runserver 0.0.0.0:8025
+    volumes:
+      - .:/app/
+    ports:
+      - 8025:8025
+    environment:
+      - DEBUG=1
+      - SECRET_KEY=0930j30h302hj320
+      - ALLOWED_HOSTS=localhost,127.0.0.1,webinaire.friare.org
+
+
